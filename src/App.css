@@ -1,0 +1,58 @@
+#root,
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  /* background-image: linear-gradient(0deg, rgb(88, 88, 88) 0%, rgb(88, 88, 88) 100%); */
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.slick-slide > div {
+  margin: 0 1em;
+  padding-top: 6em;
+  padding-bottom: 6em;
+  border: 3px;
+  transition: transform 0.5s ease-in-out;
+}
+.slick-slide:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+  transform: scale(1.01);
+  transition: ease-in-out;
+  transition-duration: 500ms;
+}
+
+.slick-prev {
+  size: 1em;
+}
+.slick-next {
+  width: 2em;
+  size: 1em;
+  border: white 2px solid;
+}
+
+#youtubevid {
+  width: 40em;
+  height: 20em;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
