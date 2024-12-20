@@ -2,13 +2,13 @@ import React, { useState } from "react";
 
 import { motion } from "framer-motion";
 import { SkillsSlider, Modal } from "./SkillsSlider";
-import { FullStackData, GamedevData, OtherSkillsData } from "./Content";
+import { FullStackData, AVArtSkillsData } from "./Content";
 import SkillTrees, { ArtSkillTree } from "./SkillTrees";
 
 const Section = (props) => {
   const { children, mobileTop } = props;
   return (
-    <section
+    <motion.section
       className={`
         h-screen w-[90%] p-5 justify-center max-w-screen-2xl mx-auto
         flex flex-col select-none justitfy-start md:justify-center
@@ -16,19 +16,20 @@ const Section = (props) => {
         `}
       initial={{
         opacity: 0,
-        y: 50,
+        y: 10,
       }}
       whileInView={{
         opacity: 1,
         y: 0,
         transition: {
+          staggerChildren: 0.25,
           duration: 1.6,
           delay: 0.6,
         },
       }}
     >
       {children}
-    </section>
+    </motion.section>
   );
 };
 
@@ -89,23 +90,22 @@ const AboutSection = () => {
           className="p-[1.5em] text-gray-400 bg-gray-900 hover:bg-black transition rounded-lg duration-500 border text-base"
           initial={{
             opacity: 0,
-            y: 25,
+            y: 40,
           }}
           whileInView={{
             opacity: 1,
             y: 0,
           }}
           transition={{
-            duration: 1.6,
-            delay: 0.6,
+            duration: 1.5,
           }}
         >
           I am a Software Developer from San Francisco, CA, <br />I love to
-          create satisfying, interactive experiences in the digital media
-          landscape. I am currently earning an additional Bachelor's degree in
-          Computer Science from Oregon State University (Go Beavers!)—adding to
-          my Bachelor's in Music from the San Francisco Conservatory of Music
-          and a Master's in Music Technology from Berklee College of Music.{" "}
+          create satisfying, interactive experiences. I am currently earning an
+          additional Bachelor's degree in Computer Science from Oregon State
+          University (Go Beavers!)—adding to my Bachelor's in Music from the San
+          Francisco Conservatory of Music and a Master's in Music Technology
+          from Berklee College of Music. I sure do love to learn new things!
           <br />
           <br />I am eager to put my new skills to the test as I level up my
           career as Software Developer.
@@ -157,7 +157,7 @@ const SkillsSection = () => {
           </div>
           <div className="col-span-2">
             <SkillsSlider
-              data={OtherSkillsData}
+              data={AVArtSkillsData}
               openModal={openModal2}
               setOpenModal={setOpenModal2}
               setCurrData={setCurrData2}

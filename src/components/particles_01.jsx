@@ -14,7 +14,7 @@ function ParticleSystem01(props) {
       {connectors.map((props, i) => (
         <Sphere key={i} {...props} />
       ))}
-      
+
       {baubles.map((props, i) => (
         <BallLights key={i} {...props} />
       ))}
@@ -177,7 +177,7 @@ function Pointer({ vec = new THREE.Vector3() }) {
       colliders={false}
       ref={ref}
     >
-      <BallCollider args={[1]} />
+      <BallCollider args={[2]} />
       <mesh castShadow receiveShadow scale={1} geometry={sphereGeometry} />
     </RigidBody>
   );

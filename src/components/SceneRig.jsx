@@ -5,6 +5,7 @@ import {
   Environment,
   Lightformer,
 } from "@react-three/drei";
+import { FloatType } from "three";
 
 function SceneRig() {
   const isMobile = window.innerWidth < 768;
@@ -22,7 +23,7 @@ function SceneRig() {
       <OrbitControls
         enableDamping={true}
         autoRotate={true}
-        autoRotateSpeed={0}
+        autoRotateSpeed={-0.3}
         maxAzimuthAngle={3.9}
         minAzimuthAngle={3.1}
         maxPolarAngle={1.5}
@@ -53,7 +54,7 @@ function SceneRig() {
         shadow-bias={-0.0001}
       />
 
-      <Environment resolution={256}>
+      <Environment resolution={256} ssgi={false}>
         <group rotation={[-Math.PI / 3, 0, 1]}>
           <Lightformer
             form="circle"

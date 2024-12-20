@@ -45,7 +45,12 @@ export const FullStackData = [
     element: (
       <div className="justify-center">
         <button
-          onclick="window.location.href='destination.html'"
+          onClick={() =>
+            window.open(
+              "https://github.com/Willclarkmusic/portfolio_2025_full",
+              "_blank"
+            )
+          }
           className="group flex m-2 items-center border p-2 rounded-xl transition-all duration-500 ease-in-out"
         >
           <span className="p-2 text-white text-sm  opacity-100  transition-all duration-300 ease-in-out">
@@ -53,6 +58,7 @@ export const FullStackData = [
           </span>
           <FaGithub className="text-white text-3xl cursor-pointer group-hover:text-blue-400" />
         </button>
+
         <img src="images/This1.png" className="rounded-3xl object-cover" />
       </div>
     ),
@@ -86,22 +92,46 @@ export const FullStackData = [
     img: "images/RoboBot.png",
     role: "Machine Learning Researcher",
     description:
-      "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
+      "This Friendly AI was my submission for the Cal Hacks: Hackathon 2024.  It  was made with a combination of Meta XR Tools, Unity and C#.  A react friendly version coming soon!",
     element: (
       <div className="justify-center">
         <img src="images/RoboBot2.png" className="rounded-3xl object-cover" />
-        <h1>Hello</h1>
       </div>
     ),
   },
 
   {
     title: "Synthesizer Plugin",
-    img: "./images/BassBotIcon.png",
+    img: "./images/BassBotLogo1.png",
     role: "Audio DSP Programmer",
     description:
       "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
-    element: "",
+    element: (
+      <div className="overflow-hidden justify-center ">
+        <button
+          onClick={() =>
+            window.open(
+              "https://github.com/Willclarkmusic/portfolio_2025_full",
+              "_blank"
+            )
+          }
+          className="group flex m-2 items-center border p-2 rounded-xl transition-all duration-500 ease-in-out"
+        >
+          <span className="p-2 text-white text-sm  opacity-100  transition-all duration-300 ease-in-out">
+            View on GitHub
+          </span>
+          <FaGithub className="text-white text-3xl cursor-pointer group-hover:text-blue-400" />
+        </button>
+        <iframe
+          width="600"
+          height="350"
+          src="https://www.youtube.com/embed/BDI37ZLwD9U?si=rdontQhEELwsAPef"
+          title="YouTube video player"
+          frameborder="0"
+          allowfullscreen="true"
+        ></iframe>
+      </div>
+    ),
   },
   {
     title: "Game Audio Class: Wwise & Unity",
@@ -115,96 +145,51 @@ export const FullStackData = [
           frameborder="0"
           src="https://itch.io/embed-upload/11622436?color=333333"
           allowfullscreen=""
-          width="600px"
-          height="400px"
-        >
-          <a href="https://prismomd.itch.io/monsters-in-trucks">
-            Play Monsters in Trucks on itch.io
-          </a>
-        </iframe>
+          width="900px"
+          height="630px"
+        ></iframe>
       </div>
     ),
   },
   {
     title: "Marble Game",
-    img: "./images/ninjafrog.png",
+    img: "./images/MarblesMagnets.png",
     role: "Game Developer",
     description:
       "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
-    element: "",
+    element: (
+      <div className="justify-center">
+        <iframe
+          allowfullscreen=""
+          width="900px"
+          height="630px"
+          frameborder="0"
+          src="https://itch.io/embed-upload/11630976?color=333333"
+        ></iframe>
+      </div>
+    ),
   },
   {
     title: "Monsters in Trucks",
-    img: "./images/ninjafrog.png",
-    role: "Game Developer",
-    description:
-      "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
-    element: "",
-  },
-  {
-    title: "Game Jam: 1st Place",
-    img: "./images/monstertrucks.png",
+    img: "./images/MonsterTrucks1.png",
     role: "Game Developer",
     description:
       "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
     element: (
-      <div className="justify-center w-[100%] h-[100%]">
+      <div className="justify-center">
         <iframe
-          id="youtubevid"
-          src="https://www.youtube.com/embed/sNWzZMGAus8?si=v1-HWaR0c4qXKv6w"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div>
-    ),
-  },
-];
-
-export const GamedevData = [
-  {
-    title: "Unity 3D: Wwise Audio DSP",
-    img: "./images/ChickenGame.png",
-    role: "Technical Sound Designer",
-    description:
-      "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
-    element: (
-      <div>
-        <iframe
-          frameborder="0"
-          src="https://itch.io/embed-upload/11622436?color=333333"
           allowfullscreen=""
-          width="600px"
-          height="400px"
-        >
-          <a href="https://prismomd.itch.io/monsters-in-trucks">
-            Play Monsters in Trucks on itch.io
-          </a>
-        </iframe>
+          width="900px"
+          height="630px"
+          frameborder="0"
+          src="https://itch.io/embed-upload/11627955?color=333333"
+        ></iframe>
       </div>
     ),
   },
   {
-    title: "Unreal Engine: Meta Sounds",
-    img: "./images/BassBotIcon.png",
-    role: "Audio DSP Programmer",
-    description:
-      "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
-    element: "",
-  },
-  {
-    title: "Bass Bot by Audio Bots",
-    img: "./images/ninjafrog.png",
-    role: "Game Developer, Sound Designer",
-    description:
-      "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
-    element: "",
-  },
-  {
     title: "Game Jam: 1st Place",
-    img: "./images/monstertrucks.png",
+    img: "./images/JellyJam.webp",
     role: "Game Developer",
     description:
       "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
@@ -224,54 +209,118 @@ export const GamedevData = [
   },
 ];
 
-export const OtherSkillsData = [
+export const AVArtSkillsData = [
   {
-    title: "Unreal Engine: Meta Sounds",
-    img: "./images/metasounds.png",
-    role: "Technical Sound Designer",
+    title: "Marpi: Paleo Alto",
+    img: "./images/PaleoAlto2.webp",
+    role: "CAD Designer | Project Manager",
+    description:
+      "PaleoAlto was my collaboration between Colour Feeders and the digital-artist, Marpi for the art festival 'CODE: Art' in the downtown public spaces of Palo Alto, CA. I led the construction and CAD design for this piece while my company Colour Feeders handled the technology and computing power.",
+    element: (
+      <div className="overflow-hidden justify-center ">
+        <button
+          onClick={() =>
+            window.open(
+              "https://github.com/Willclarkmusic/portfolio_2025_full",
+              "_blank"
+            )
+          }
+          className="group flex m-2 items-center border p-2 rounded-xl transition-all duration-500 ease-in-out"
+        >
+          <span className="p-2 text-white text-sm  opacity-100  transition-all duration-300 ease-in-out">
+            View on GitHub
+          </span>
+          <FaGithub className="text-white text-3xl cursor-pointer group-hover:text-blue-400" />
+        </button>
+        <iframe
+          width="600"
+          height="350"
+          src="https://www.youtube.com/embed/ItJb8IFTutE?si=4YJjcUpon-3MoDEW"
+          title="YouTube video player"
+          frameborder="0"
+          allowfullscreen="true"
+        ></iframe>
+      </div>
+    ),
+  },
+  {
+    title: "Kaskade: Menagerie 2022",
+    img: "./images/Menag2022.jpg",
+    role: "Stage Designer | Visual Artist",
+    description:
+      "This stage design was for the festival 'Menagerie 2023' with headlining artist Kaskade. I created the design for the stage, lighting, video and rigging, then it was passed off to a civil-engineering firm.  I supervised and staffed the build and operation of the stage, while operating video for the headlining performances.",
+    element: (
+      <div className="overflow-hidden justify-center ">
+        <iframe
+          width="600"
+          height="350"
+          src="https://www.youtube.com/embed/o_2ffI3xDDM?si=ToFiy7RqNoamWxdL"
+          title="YouTube video player"
+          frameborder="0"
+          allowfullscreen="true"
+        ></iframe>
+      </div>
+    ),
+  },
+  {
+    title: "Diplo: Menagerie 2021",
+    img: "./images/Diplo1.png",
+    role: "Stage Designer | Visual Artist",
     description:
       "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
     element: "",
   },
   {
-    title: "Unity 3d: Wwise",
-    img: "./images/ninjafrog.png",
-    role: "Game Developer, Sound Designer",
+    title: "Artechouse: Computing Infrastructure",
+    img: "./images/ATH1.jpg",
+    role: "Stage Designer | Visual Artist",
     description:
-      "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
-    element: "",
+      "Artechouse is one of the premiere digital-art spaces in the world with locations on the east coast and pop-ups internationally. I built over 30 of the highest level, enterprise-server computer nodes to power real-time art installations and single-node art projects with a budget of over $1 million. Their space in New York holds the record for highest pixel-density projection mapping ever done.",
+    element: (
+      <div className="">
+        <img
+          src="images/ATH3.jpg"
+          className="col-span-2 rounded-3xl object-cover"
+        />
+        <img
+          src="images/ATHCompy2-scaled.jpg"
+          className="col-span-1 rounded-3xl object-cover"
+        />
+      </div>
+    ),
   },
   {
-    title: "Unity 3d",
-    img: "./images/monstertrucks.png",
-    role: "Game Developer",
+    title: "Audio Reactive Visuals",
+    img: "./images/Blob.png",
+    role: "Interactive Audio/Visual Artist",
     description:
       "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
-    element: "",
-  },
-  {
-    title: "Unreal Engine: Meta Sounds",
-    img: "./images/metasounds.png",
-    role: "Technical Sound Designer",
-    description:
-      "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
-    element: "",
-  },
-  {
-    title: "Unity 3d: Wwise",
-    img: "./images/ninjafrog.png",
-    role: "Game Developer, Sound Designer",
-    description:
-      "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
-    element: "",
-  },
-  {
-    title: "Unity 3d",
-    img: "./images/monstertrucks.png",
-    role: "Game Developer",
-    description:
-      "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
-    element: "",
+    element: (
+      <div className="overflow-hidden justify-center ">
+        <button
+          onClick={() =>
+            window.open(
+              "https://github.com/Willclarkmusic/portfolio_2025_full",
+              "_blank"
+            )
+          }
+          className="group flex m-2 items-center border p-2 rounded-xl transition-all duration-500 ease-in-out"
+        >
+          <span className="p-2 text-white text-sm  opacity-100  transition-all duration-300 ease-in-out">
+            View on GitHub
+          </span>
+          <FaGithub className="text-white text-3xl cursor-pointer group-hover:text-blue-400" />
+        </button>
+        <iframe
+          width="600"
+          height="350"
+          src="https://www.youtube.com/embed/BDI37ZLwD9U?si=rdontQhEELwsAPef"
+          title="YouTube video player"
+          frameborder="0"
+          allowfullscreen="true"
+        ></iframe>
+      </div>
+    ),
   },
 ];
 
@@ -316,14 +365,14 @@ export const WebAppTree = [
     _id: 6,
     icon: <FaGithub />,
     text: "Git",
-    lvl: 3,
+    lvl: 4,
     className: "top-[70%] left-[31%]",
   },
   {
     _id: 7,
     icon: <DiMongodb />,
     text: "Mongo DB",
-    lvl: 2,
+    lvl: 3,
     className: "top-[50%] left-[31%]",
   },
   {

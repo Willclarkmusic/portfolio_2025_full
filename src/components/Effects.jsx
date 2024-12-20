@@ -9,6 +9,7 @@ import {
 } from "postprocessing";
 import { useEffect, useState } from "react";
 import { SSGIEffect, VelocityDepthNormalPass } from "../realism-effects/v2";
+import SceneRig from "./SceneRig";
 
 export function Effects() {
   const gl = useThree((state) => state.gl);
@@ -41,7 +42,7 @@ export function Effects() {
       normalPhi: 26.087,
       roughnessPhi: 18.477999999999998,
       specularPhi: 7.099999999999999,
-      envBlur: 0.8,
+      envBlur: 0.6,
     };
 
     const renderPass = new RenderPass(scene, camera);

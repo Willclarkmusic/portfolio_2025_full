@@ -1,6 +1,6 @@
 import React from "react";
 import { BsPersonWalking } from "react-icons/bs";
-import { AiOutlineCoffee } from "react-icons/ai";
+import { GiCoffeeCup } from "react-icons/gi";
 import { PiPlanetFill } from "react-icons/pi";
 import { GrTechnology } from "react-icons/gr";
 import { FaGamepad, FaChevronDown } from "react-icons/fa";
@@ -8,7 +8,7 @@ import { GiCampingTent, GiBallPyramid } from "react-icons/gi";
 
 const Menu = (props) => {
   const { section, onSectionChange, menuOpened, setMenuOpened } = props;
-  console.log(section);
+  // console.log(section);
   return (
     <div className="">
       {/*Menu Close/Open Button*/}
@@ -129,7 +129,7 @@ const Menu = (props) => {
           <span className="p-2 ml-[-4.2em] text-white text-sm opacity-0 group-hover:opacity-100 group-hover:ml-4 transition-all duration-300 ease-in-out">
             Contact
           </span>
-          <AiOutlineCoffee className="text-white text-3xl cursor-pointer group-hover:text-blue-400" />
+          <GiCoffeeCup className="text-white text-3xl cursor-pointer group-hover:text-blue-400" />
         </button>
 
         {/*Home Button*/}

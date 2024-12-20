@@ -28,10 +28,10 @@ function App() {
       />
       <MotionConfig
         transition={{
-          type: "spring",
+          type: "tween",
           mass: 5,
-          stiffness: 50,
-          damping: 50,
+          stiffness: 0,
+          damping: 0,
           restDelta: 0.0001,
         }}
       >

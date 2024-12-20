@@ -99,7 +99,7 @@ export const SkillsSlider = ({
 export const Modal = ({ data, setOpenModal }) => {
   return (
     <div
-      className={`fixed z-[1000] items-start justify-start w-2/3 h-[40em] p-10 pt-[6em] bg-gray-900 border border-white rounded-xl`}
+      className={`fixed z-[1000] items-start justify-start max-w-screen-2xl max-2xl w-auto h-[auto] p-10 pt-[6em] bg-gray-900 border border-white rounded-xl`}
     >
       <div className="container mx-auto">
         <button
@@ -121,7 +121,7 @@ export const Modal = ({ data, setOpenModal }) => {
           <p className="p-[1em] text-gray-400 text-lg bg-gray-900 hover:bg-black transition rounded-lg duration-500 border ">
             <br />
             {data.description}
-            <br /> <br /> <br />
+            <br /> <br />
           </p>
         </div>
 

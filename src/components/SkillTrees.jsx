@@ -5,14 +5,14 @@ import { WebAppTree, MLAppTree, SoftDevTree, OtherSkillTree } from "./Content";
 
 const SkillTrees = () => {
   const containerRef = useRef();
-  const [target, setTarget] = useState(-1);
-  const [infoGraph, setInfoGraph] = useState([0, "<Select a Skill>"]);
+  const [target, setTarget] = useState(9);
+  const [infoGraph, setInfoGraph] = useState([5, "JavaScript"]);
 
-  const [target2, setTarget2] = useState(-1);
-  const [infoGraph2, setInfoGraph2] = useState([0, "<Select a Skill>"]);
+  const [target2, setTarget2] = useState(1);
+  const [infoGraph2, setInfoGraph2] = useState([5, "Python"]);
 
-  const [target3, setTarget3] = useState(-1);
-  const [infoGraph3, setInfoGraph3] = useState([0, "<Select a Skill>"]);
+  const [target3, setTarget3] = useState(4);
+  const [infoGraph3, setInfoGraph3] = useState([4, "C++"]);
 
   const Bar = ({ lvl, color }) => {
     let progress = lvl * 20;
@@ -29,7 +29,22 @@ const SkillTrees = () => {
   };
   return (
     <>
-      <div className="columns-3 w-[90%]">
+      <motion.div
+        className="columns-3 w-[90%]"
+        initial={{
+          opacity: 0,
+          y: 10,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            staggerChildren: 0.25,
+            duration: 1.6,
+            delay: 0.6,
+          },
+        }}
+      >
         <div className="col-span-1 h-auto">
           <h1 className="pt-5 pl-5 justification-center">Web Dev</h1>
           <div className="flow-root bg-white px-1 italic">
@@ -66,11 +81,24 @@ const SkillTrees = () => {
             </h1>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div
+      <motion.div
         ref={containerRef}
         className="relative columns-3 h-[80%] w-[90%] top-[2%] place-content-center overflow-hidden border rounded-xl"
+        initial={{
+          opacity: 0,
+          y: 10,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            staggerChildren: 0.25,
+            duration: 1.6,
+            delay: 0.6,
+          },
+        }}
       >
         <div className="border col-span-1 h-full w-[104%]" />
         <div className="border col-span-1 h-full w-[104%]" />
@@ -111,15 +139,15 @@ const SkillTrees = () => {
             setInfoGraph={setInfoGraph3}
           />
         ))}
-      </div>
+      </motion.div>
     </>
   );
 };
 
 export const ArtSkillTree = () => {
   const containerRef = useRef();
-  const [target4, setTarget4] = useState(-1);
-  const [infoGraph4, setInfoGraph4] = useState([0, "<<>>"]);
+  const [target4, setTarget4] = useState(4);
+  const [infoGraph4, setInfoGraph4] = useState([5, "Ableton"]);
 
   const Bar = ({ lvl, color }) => {
     let progress = lvl * 20;
@@ -221,6 +249,16 @@ const SkillCard = ({
         }`,
         className
       )}
+      initial={{
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: 1,
+        transition: {
+          staggerChildren: 0.25,
+          duration: 1.2,
+        },
+      }}
     >
       <button
         onClick={ButtonClick}

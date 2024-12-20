@@ -52,9 +52,13 @@ function CarShow(props) {
       </group>
 
       <group
-        position={[isMobile ? 2 : 0, isMobile ? -120 : -127, isMobile ? 0 : 0]}
-        scale={[2, 2, 2]}
-        rotation={[-0.1, 2.3, 0]}
+        position={[
+          isMobile ? 2 : 0,
+          isMobile ? -120 : -129.1,
+          isMobile ? 0 : 0,
+        ]}
+        scale={[1.9, 1.9, 1.9]}
+        rotation={[-0.1, 1.9, 0]}
       >
         <ambientLight />
         <Camping1 />
