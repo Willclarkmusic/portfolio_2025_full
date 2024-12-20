@@ -3,16 +3,16 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { SkillsSlider, Modal } from "./SkillsSlider";
 import { FullStackData, GamedevData, OtherSkillsData } from "./Content";
-import SkillTree from "./SkillsTree";
+import SkillTrees, { ArtSkillTree } from "./SkillTrees";
 
 const Section = (props) => {
   const { children, mobileTop } = props;
   return (
     <section
       className={`
-        h-screen w-screen p-8 max-w-screen-2xl mx-auto
-        flex flex-col items-start select-none justitfy-start md:justify-center
-
+        h-screen w-[90%] p-5 justify-center max-w-screen-2xl mx-auto
+        flex flex-col select-none justitfy-start md:justify-center
+        
         `}
       initial={{
         opacity: 0,
@@ -83,10 +83,10 @@ const HomeSection = () => {
 const AboutSection = () => {
   return (
     <Section id="section2">
-      <div className="max-w-lg leading-snug text-left ">
+      <div className="max-w-lg pl-10 leading-snug text-left ">
         <h1 className="text-6xl p-2">About Me</h1>
         <motion.p
-          className="p-[1em] text-gray-400 bg-gray-900 hover:bg-black transition rounded-lg duration-500 border text-base"
+          className="p-[1.5em] text-gray-400 bg-gray-900 hover:bg-black transition rounded-lg duration-500 border text-base"
           initial={{
             opacity: 0,
             y: 25,
@@ -101,11 +101,14 @@ const AboutSection = () => {
           }}
         >
           I am a Software Developer from San Francisco, CA, <br />I love to
-          create satisfying, interactive experiences and am hungry to <br />
-          Currently, I’m earning a second Bachelor's degree in Computer Science
-          from Oregon State University (Go Beavers!)—adding to my Bachelor's in
-          Music from the San Francisco Conservatory of Music and a Master's in
-          Music Technology from Berklee College of Music.
+          create satisfying, interactive experiences in the digital media
+          landscape. I am currently earning an additional Bachelor's degree in
+          Computer Science from Oregon State University (Go Beavers!)—adding to
+          my Bachelor's in Music from the San Francisco Conservatory of Music
+          and a Master's in Music Technology from Berklee College of Music.{" "}
+          <br />
+          <br />I am eager to put my new skills to the test as I level up my
+          career as Software Developer.
         </motion.p>
       </div>
     </Section>
@@ -120,20 +123,20 @@ const SkillsSection = () => {
   const [currData2, setCurrData2] = useState({});
 
   return (
-    <div className="pt-[1em] items-center">
+    <div className="size-full items-center justify-center">
       <Section>
-        <h1 className="text-center">Programming Skills</h1>
-        <div>
-          <SkillTree />
+        <h1 className="text-6xl p-2">Skills</h1>
+        <div className="size-full">
+          <SkillTrees />
         </div>
       </Section>
 
       <Section id="section3">
-        <h1 className="text-center">Full-Stack | Web-App Developer</h1>
+        <h1 className="text-6xl p-2">Projects</h1>
         {openModal1 && <Modal data={currData1} setOpenModal={setOpenModal1} />}
         <div className="">
           <div className=""></div>
-          <div className="object-left ">
+          <div className="container mx-auto ">
             <SkillsSlider
               data={FullStackData}
               openModal={openModal1}
@@ -146,10 +149,12 @@ const SkillsSection = () => {
       </Section>
 
       <Section>
-        <h1 className="text-center">&#40;ART&#41; =&gt; &#123;TECH&#125;</h1>
+        <h1 className="text-6xl p-2">&#40;ART&#41; =&gt; &#123;TECH&#125;</h1>
         {openModal2 && <Modal data={currData2} setOpenModal={setOpenModal2} />}
         <div className="grid grid-cols-3">
-          <div className="col-span-1"></div>
+          <div className="col-span-1">
+            <ArtSkillTree />
+          </div>
           <div className="col-span-2">
             <SkillsSlider
               data={OtherSkillsData}

@@ -20,6 +20,12 @@ function App() {
 
   return (
     <>
+      <Menu
+        section={section}
+        onSectionChange={setSection}
+        menuOpened={menuOpened}
+        setMenuOpened={setMenuOpened}
+      />
       <MotionConfig
         transition={{
           type: "spring",
@@ -29,7 +35,11 @@ function App() {
           restDelta: 0.0001,
         }}
       >
-        <Canvas shadows fallback={<div>WebGL not supported!</div>}>
+        <Canvas
+          resize={{ scroll: false }}
+          shadows
+          fallback={<div>WebGL not supported!</div>}
+        >
           <color args={[0, 0, 0]} attach="background" />
 
           <SceneRig />
@@ -44,16 +54,9 @@ function App() {
             <Scroll html="true">
               <Interface />
             </Scroll>
-            
           </ScrollControls>
         </Canvas>
       </MotionConfig>
-      <Menu
-        section={section}
-        onSectionChange={setSection}
-        menuOpened={menuOpened}
-        setMenuOpened={setMenuOpened}
-      />
     </>
   );
 }

@@ -63,7 +63,7 @@ export function Effects() {
         new BloomEffect({
           mipmapBlur: true,
           luminanceThreshold: 0.1,
-          intensity: 0.9,
+          intensity: 0.4,
           levels: 7,
         })
       )

@@ -3,9 +3,8 @@ import { BsPersonWalking } from "react-icons/bs";
 import { AiOutlineCoffee } from "react-icons/ai";
 import { PiPlanetFill } from "react-icons/pi";
 import { GrTechnology } from "react-icons/gr";
-import { FaGamepad } from "react-icons/fa";
-import { GiBallPyramid } from "react-icons/gi";
-import { GiCampingTent } from "react-icons/gi";
+import { FaGamepad, FaChevronDown } from "react-icons/fa";
+import { GiCampingTent, GiBallPyramid } from "react-icons/gi";
 
 const Menu = (props) => {
   const { section, onSectionChange, menuOpened, setMenuOpened } = props;
@@ -33,6 +32,24 @@ const Menu = (props) => {
           }`}
         />
       </button>
+
+      {/* DownButton */}
+      <div
+        className={`absolute bottom-10 z-10 left-[45%] ${
+          section == 7 ? "rotate-180" : ""
+        }`}
+      >
+        <button
+          onClick={() =>
+            onSectionChange(
+              section == 0 ? section + 2 : section == 7 ? 0 : section + 1
+            )
+          }
+          className="border p-2 rounded-xl transition-all duration-500 ease-in-out"
+        >
+          <FaChevronDown className="text-white text-4xl cursor-pointer group-hover:text-blue-400" />
+        </button>
+      </div>
 
       {/* Container */}
       <div
