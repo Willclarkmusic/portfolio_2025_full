@@ -54,7 +54,7 @@ export const SkillsSlider = ({
 
   return (
     <div className={`${widthDim} items-center m:w-[100vw`}>
-      <div className="slider-container object-left rounded-lg">
+      <div className="slider-container object-left rounded-lg max-w-screen-2xl">
         <Slider {...settings}>
           {data.map((d, key) => (
             <div

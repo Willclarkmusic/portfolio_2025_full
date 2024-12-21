@@ -14,6 +14,8 @@ import CoffeePlant from "../components/CoffeePlant.jsx";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Camping1 } from "../components/Camping1.jsx";
 
+const isMobile = window.innerWidth < 768;
+
 function CarShow(props) {
   const { section } = props;
   const { viewport } = useThree();
