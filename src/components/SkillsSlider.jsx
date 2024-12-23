@@ -1,13 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useScroll } from "@react-three/drei";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { MobileParams } from "./ScrollManager";
 
 import { FaWindowClose, FaArrowRight, FaArrowLeft } from "react-icons/fa";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { useFrame } from "@react-three/fiber";
 
 export const SkillsSlider = ({
   data,
@@ -16,7 +15,7 @@ export const SkillsSlider = ({
   setCurrData,
   widthDim,
 }) => {
-  const isMobile = window.innerWidth < 768;
+  const { isTablet, isMobile } = MobileParams();
 
   var settings = {
     className: "center",
@@ -26,24 +25,24 @@ export const SkillsSlider = ({
     variableWidth: true,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1200,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 1,
           slidesToScroll: 3,
-          infinite: true,
+          infinite: false,
           dots: true,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 1100,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
           initialSlide: 2,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 700,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -53,7 +52,7 @@ export const SkillsSlider = ({
   };
 
   return (
-    <div className={`${widthDim} items-center m:w-[100vw`}>
+    <div className={`${widthDim} items-center`}>
       <div className="slider-container object-left rounded-lg max-w-screen-2xl">
         <Slider {...settings}>
           {data.map((d, key) => (
@@ -63,12 +62,24 @@ export const SkillsSlider = ({
                 transformStyle: "preserve-3d",
               }}
               key={key}
-              className="h-[35em] w-[25em] bg-gray-900 hover:bg-black transition duration-500 text-black rounded-3xl border-2"
+              className={`${
+                isMobile
+                  ? "h-[42vh] w-[10vw]"
+                  : isTablet
+                  ? "h-[30em] w-[20vw]"
+                  : "h-[35em] w-[20vw]"
+              } bg-gray-900 hover:bg-black transition duration-500 text-black rounded-3xl border-2`}
             >
               <div className="rounded-t-xl">
                 <img
                   src={d.img}
-                  className="h-[25em] w-[25em] rounded-3xl object-cover"
+                  className={`h-[25em] ${
+                    isMobile
+                      ? "h-[30vh] w-[60vw]"
+                      : isTablet
+                      ? "h-[20em] w-[25em]"
+                      : "h-[em] w-[25em]"
+                  } rounded-3xl object-cover`}
                 />
               </div>
               <div className="p-2 flex flex-col ">
@@ -77,15 +88,17 @@ export const SkillsSlider = ({
                 </p>
                 <p className="ml-3 text-lg text-gray-200">{d.role}</p>
                 <div className="pt-4 pr-4 items-center text-right">
-                  <button
-                    className="text-white text-lg px-6 py-2"
-                    onClick={() => {
-                      setCurrData(d);
-                      setOpenModal(!openModal);
-                    }}
-                  >
-                    Details...
-                  </button>
+                  {!isMobile && (
+                    <button
+                      className="text-white text-lg px-6 py-2"
+                      onClick={() => {
+                        setCurrData(d);
+                        setOpenModal(!openModal);
+                      }}
+                    >
+                      Details...
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

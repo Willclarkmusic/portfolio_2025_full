@@ -36,7 +36,7 @@ const Menu = (props) => {
       {/* DownButton */}
       <div
         className={`absolute bottom-10 z-10 left-[45%] ${
-          section == 7 ? "rotate-180" : ""
+          section == 7 ? "rotate-180" : "rotate-0"
         }`}
       >
         <button

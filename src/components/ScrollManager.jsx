@@ -1,8 +1,25 @@
 import { useScroll } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 import { motion, MotionCanvas } from "framer-motion-3d";
+
+export const MobileParams = () => {
+  const { viewport } = useThree();
+  const isTablet = window.innerWidth < 1300 && window.innerWidth > 800;
+  const isMobile = window.innerWidth < 800;
+  const responsiveRatio = viewport.width / 8;
+  const aspectRatio = viewport.width / viewport.height;
+
+  // console.log(window.innerWidth);
+
+  return {
+    isTablet: isTablet,
+    isMobile: isMobile,
+    responsiveRatio: responsiveRatio,
+    aspectRatio: aspectRatio,
+  };
+};
 
 export const ScrollManager = (props) => {
   const { section, onSectionChange } = props;
@@ -35,6 +52,18 @@ export const ScrollManager = (props) => {
 
     const curSection = Math.floor(data.scroll.current * data.pages);
 
+    // console.log(curSection);
+
+    // // My Try
+    // if (data.scroll.current > lastScroll.current) {
+    //   onSectionChange(lastScroll.current + 1);
+    // } else if (data.scroll.current < lastScroll.current) {
+    //   onSectionChange(lastScroll.current - 1);
+    // }
+    // lastScroll.current = data.scroll.current;
+    // console.log(lastScroll.current);
+    // console.log(data.scroll.current);
+
     //* Between 0 and 2
     if (data.scroll.current > lastScroll.current && curSection === 0) {
       onSectionChange(2);
@@ -45,7 +74,6 @@ export const ScrollManager = (props) => {
       onSectionChange(0);
     }
     lastScroll.current = data.scroll.current;
-
 
     // if (data.scroll.current > lastScroll.current) {
     //   onSectionChange(data.scroll.current + 1);
@@ -72,7 +100,6 @@ export const ScrollManager = (props) => {
     // ) {
     //   onSectionChange(4);
     // }
-
   });
 
   return null;

@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  OrbitControls,
-  Environment,
-  Lightformer,
-  useScroll,
-} from "@react-three/drei";
+import { useScroll } from "@react-three/drei";
 
 import { motion } from "framer-motion-3d";
 import ParticleSystem01 from "../components/particles_01.jsx";
@@ -13,16 +8,21 @@ import Desk from "../components/Desk.jsx";
 import CoffeePlant from "../components/CoffeePlant.jsx";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Camping1 } from "../components/Camping1.jsx";
+import {
+  Bloom,
+  EffectComposer,
+  Noise,
+  Vignette,
+  N8AO,
+  SMAA,
+  TiltShift2,
+} from "@react-three/postprocessing";
+import { BlendFunction } from "postprocessing";
+import { MobileParams } from "../components/ScrollManager";
 
-const isMobile = window.innerWidth < 768;
-
-function CarShow(props) {
-  const { section } = props;
-  const { viewport } = useThree();
+function CarShow({ section }) {
+  const { isTablet, isMobile, responsiveRatio } = MobileParams();
   const data = useScroll();
-
-  const isMobile = window.innerWidth < 768;
-  const responsiveRatio = viewport.width / 12;
 
   useFrame(() => {
     const curSection = Math.floor(data.scroll.current * data.pages);
@@ -30,14 +30,16 @@ function CarShow(props) {
 
   return (
     <>
-      {/* <ambientLight intensity={0.7} position={[0, 10, 0]} /> */}
+      <ambientLight intensity={0.7} position={[0, 10, 0]} />
 
       <motion.group position={[0, isMobile ? 10 : 15, 0]}>
         <ParticleSystem01 section={section} />
       </motion.group>
 
       <group
-        position={[isMobile ? 2 : 0, isMobile ? -49 : -36.5, isMobile ? 5 : 10]}
+        position={
+          isMobile ? [2, -35, 5] : isTablet ? [5, -34, 10] : [0, -33.5, 10]
+        }
         scale={[7, 7, 7]}
         rotation={[-0.05, 0, 0]}
       >
@@ -54,19 +56,37 @@ function CarShow(props) {
       </group>
 
       <group
-        position={[
-          isMobile ? 2 : 0,
-          isMobile ? -120 : -129.1,
-          isMobile ? 0 : 0,
-        ]}
-        scale={[1.9, 1.9, 1.9]}
+        position={[isMobile ? 2 : 0, isMobile ? -102 : -116, isMobile ? 0 : 0]}
+        scale={isMobile ? [2.3, 2.3, 2.3] : [1.9, 1.9, 1.9]}
         rotation={[-0.1, 1.9, 0]}
       >
-        <ambientLight />
         <Camping1 />
       </group>
 
-      <Effects />
+      {/* <Effects /> */}
+      <EffectComposer multisampling={0}>
+        <Bloom
+          mipmapBlur
+          levels={7}
+          intensity={1}
+          luminanceThreshold={0}
+          luminanceSmoothing={0.9}
+          height={300}
+        />
+        <Noise opacity={0.01} />
+        <Vignette eskil={false} offset={0.1} darkness={1.1} />
+        <N8AO
+          halfRes
+          aoRadius={32}
+          intensity={2}
+          aoSamples={6}
+          denoiseSamples={8}
+          denoiseRadius={12}
+          distanceFalloff={12}
+        />
+        {/* <TiltShift2 /> */}
+        <SMAA />
+      </EffectComposer>
     </>
   );
 }

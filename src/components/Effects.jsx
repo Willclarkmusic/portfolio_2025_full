@@ -8,14 +8,18 @@ import {
   FXAAEffect,
 } from "postprocessing";
 import { useEffect, useState } from "react";
-import { SSGIEffect, VelocityDepthNormalPass } from "../realism-effects/v2";
-import SceneRig from "./SceneRig";
+import {
+  PoissonDenoisePass,
+  SSGIEffect,
+  VelocityDepthNormalPass,
+} from "../realism-effects/v2";
 
 export function Effects() {
   const gl = useThree((state) => state.gl);
   const scene = useThree((state) => state.scene);
   const camera = useThree((state) => state.camera);
   const size = useThree((state) => state.size);
+
   const [composer] = useState(
     () => new EffectComposer(gl, { multisampling: 0 })
   );
@@ -49,6 +53,7 @@ export function Effects() {
     const velocityDepthNormalPass = new VelocityDepthNormalPass(scene, camera);
     composer.addPass(renderPass);
     composer.addPass(velocityDepthNormalPass);
+
     composer.addPass(
       new EffectPass(
         camera,
@@ -58,6 +63,7 @@ export function Effects() {
         })
       )
     );
+
     composer.addPass(
       new EffectPass(
         camera,

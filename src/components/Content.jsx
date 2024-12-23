@@ -94,7 +94,7 @@ export const FullStackData = [
     description:
       "This Friendly AI was my submission for the Cal Hacks: Hackathon 2024.  It  was made with a combination of Meta XR Tools, Unity and C#.  A react friendly version coming soon!",
     element: (
-      <div className="justify-center">
+      <div className="flex w-[93%] justify-center">
         <img src="images/RoboBot2.png" className="rounded-3xl object-cover" />
       </div>
     ),
@@ -129,80 +129,6 @@ export const FullStackData = [
           title="YouTube video player"
           frameborder="0"
           allowfullscreen="true"
-        ></iframe>
-      </div>
-    ),
-  },
-  {
-    title: "Game Audio Class: Wwise & Unity",
-    img: "./images/ChickenGame.png",
-    role: "Technical Sound Designer",
-    description:
-      "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
-    element: (
-      <div>
-        <iframe
-          frameborder="0"
-          src="https://itch.io/embed-upload/11622436?color=333333"
-          allowfullscreen=""
-          width="900px"
-          height="630px"
-        ></iframe>
-      </div>
-    ),
-  },
-  {
-    title: "Marble Game",
-    img: "./images/MarblesMagnets.png",
-    role: "Game Developer",
-    description:
-      "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
-    element: (
-      <div className="justify-center">
-        <iframe
-          allowfullscreen=""
-          width="900px"
-          height="630px"
-          frameborder="0"
-          src="https://itch.io/embed-upload/11630976?color=333333"
-        ></iframe>
-      </div>
-    ),
-  },
-  {
-    title: "Monsters in Trucks",
-    img: "./images/MonsterTrucks1.png",
-    role: "Game Developer",
-    description:
-      "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
-    element: (
-      <div className="justify-center">
-        <iframe
-          allowfullscreen=""
-          width="900px"
-          height="630px"
-          frameborder="0"
-          src="https://itch.io/embed-upload/11627955?color=333333"
-        ></iframe>
-      </div>
-    ),
-  },
-  {
-    title: "Game Jam: 1st Place",
-    img: "./images/JellyJam.webp",
-    role: "Game Developer",
-    description:
-      "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
-    element: (
-      <div className="justify-center w-[100%] h-[100%]">
-        <iframe
-          id="youtubevid"
-          src="https://www.youtube.com/embed/sNWzZMGAus8?si=v1-HWaR0c4qXKv6w"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
         ></iframe>
       </div>
     ),
@@ -318,6 +244,62 @@ export const AVArtSkillsData = [
           title="YouTube video player"
           frameborder="0"
           allowfullscreen="true"
+        ></iframe>
+      </div>
+    ),
+  },
+  {
+    title: "Game Jam: 1st Place",
+    img: "./images/JellyJam.webp",
+    role: "Game Developer",
+    description:
+      "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
+    element: (
+      <div className="justify-center w-[100%] h-[100%]">
+        <iframe
+          id="youtubevid"
+          src="https://www.youtube.com/embed/sNWzZMGAus8?si=v1-HWaR0c4qXKv6w"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    ),
+  },
+  {
+    title: "Marble Game",
+    img: "./images/MarblesMagnets.png",
+    role: "Game Developer",
+    description:
+      "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
+    element: (
+      <div className="justify-center">
+        <iframe
+          allowfullscreen=""
+          width="900px"
+          height="630px"
+          frameborder="0"
+          src="https://itch.io/embed-upload/11630976?color=333333"
+        ></iframe>
+      </div>
+    ),
+  },
+  {
+    title: "Monsters in Trucks",
+    img: "./images/MonsterTrucks1.png",
+    role: "Game Developer",
+    description:
+      "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
+    element: (
+      <div className="justify-center">
+        <iframe
+          allowfullscreen=""
+          width="900px"
+          height="630px"
+          frameborder="0"
+          src="https://itch.io/embed-upload/11627955?color=333333"
         ></iframe>
       </div>
     ),
@@ -562,5 +544,26 @@ export const OtherSkillTree = [
     text: "VJ (video)",
     lvl: 5,
     className: "top-[35%] left-[56%]",
+  },
+];
+
+const ExtrasSlides = [
+  {
+    title: "Game Audio Class: Wwise & Unity",
+    img: "./images/ChickenGame.png",
+    role: "Technical Sound Designer",
+    description:
+      "This Website was built with a lot of tools. React Fiber, Three.js, tailwind and more!",
+    element: (
+      <div>
+        <iframe
+          frameborder="0"
+          src="https://itch.io/embed-upload/11622436?color=333333"
+          allowfullscreen=""
+          width="900px"
+          height="630px"
+        ></iframe>
+      </div>
+    ),
   },
 ];

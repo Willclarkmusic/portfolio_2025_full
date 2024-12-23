@@ -14,9 +14,9 @@ function App() {
   const [section, setSection] = useState(0);
   const [menuOpened, setMenuOpened] = useState(true);
 
-  // useEffect(() => {
-  //   setMenuOpened(false);
-  // }, [section]);
+  useEffect(() => {
+    setMenuOpened(false);
+  }, [section]);
 
   return (
     <>
@@ -36,9 +36,10 @@ function App() {
         }}
       >
         <Canvas
-          resize={{ scroll: false }}
+          resize={{ scroll: true }}
           shadows
           fallback={<div>WebGL not supported!</div>}
+          frameloop="demand"
         >
           <color args={[0, 0, 0]} attach="background" />
 
