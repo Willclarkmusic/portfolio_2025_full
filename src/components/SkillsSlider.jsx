@@ -16,7 +16,6 @@ export const SkillsSlider = ({
   widthDim,
 }) => {
   const { isTablet, isMobile } = MobileParams();
-
   var settings = {
     className: "center",
     centerMode: false,
